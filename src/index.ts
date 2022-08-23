@@ -175,6 +175,7 @@ async function setupSpectrogramFromMicrophone(
             // Merge all the buffers we have so far into a single buffer for rendering
             const buffer = new Float32Array(channelBuffers[i].length * SPECTROGRAM_WINDOW_OVERLAP);
             buffers.push(buffer);
+            console.log(buffers);
             for (let j = 0; j < channelBuffers[i].length; j += 1) {
                 buffer.set(channelBuffers[i][j], SPECTROGRAM_WINDOW_OVERLAP * j);
             }
